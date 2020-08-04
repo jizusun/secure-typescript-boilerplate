@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "audit-dependencies": "audit-ci --config audit-ci.json",
-    "lint": "eslint './src/**/*.{tsx,ts}'",
+    "lint": "eslint './src/**/*.{tsx,ts}' && npm run lint:ci",
+    "lint:ci": "eslint -f json -o reports/eslint.json './src/**/*.{tsx,ts}'",
     "lint-fix": "eslint './src/**/*.ts' --fix",
     "start": "node ./dist/index.js",
     "start:dev": "NODE_ENV=development ts-node-dev src/index.ts",
