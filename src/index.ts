@@ -7,5 +7,7 @@ const app = express();
 const productsController = new ProductsController();
 productsController.route(app);
 
-const port = process.env.PORT || 3001;
+const test: boolean = '123';
+
+const port: any = process.env.PORT || 3001;
 app.listen(port, () => console.log(`On port ${port}`));

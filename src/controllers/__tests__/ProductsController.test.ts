@@ -15,7 +15,7 @@ describe('ProductsController', () => {
       const { req, res, next } = mockRequestResponse();
       await controller.getItems(req, res, next);
 
-      expect(res.json).toHaveBeenCalled();
+      expect(res.json).not.toHaveBeenCalled();
     });
   });
 });
